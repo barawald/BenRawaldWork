@@ -1,0 +1,52 @@
+<html>
+    <!-- 
+        Benjamin Rawald
+        Assignment 8 Program 2
+        The program recieves a given array and a number and prints the number of 
+        occurences of the given number within the array.
+    -->
+    <head>
+        <h1>Array Analysis</h1>
+        <title>Array Analysis Function</title>
+        <script>
+            /*
+            This function Receives the parameters of numArray and num. 
+            The function counts and returns a number of times a given number is repeated in the array.
+             */
+             var num_count = 0;
+             var count = 0;
+            function countOccurences(numArray, num){
+                while(count<=numArray.length){  //     =  OR <=
+                        if(numArray[count] == num){
+                            num_count++;
+                            count++;
+                    }else{
+                        count++;
+                    }
+                }
+                //The number of occurrences of 'num' in 'numArray' is 'num_count'
+                //Print the result to the page
+                document.write("The number of occurrences of " + num + " in ["); //no break intentional
+                var print_count = 0;
+                //print NON-hardcoded array
+                while(print_count<numArray.length){
+                    if(print_count==numArray.length-1){
+                        document.write(numArray[print_count] + "]")
+                        print_count++;
+                    }else{
+                        document.write(numArray[print_count] + ", ");
+                        print_count++;
+                    }  
+                }
+                document.write(" is " + num_count);
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var numArray = [5,7,53,9,2,25,5,93,5]; 
+            var num = 5;
+            countOccurences(numArray, num);
+        </script>
+    </body>
+</html>

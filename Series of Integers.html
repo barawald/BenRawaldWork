@@ -1,0 +1,63 @@
+<html>
+    <!-- 
+        Benjamin Rawald
+        Assignment 8 Program 1 
+        This Program collects a set number of values from the user and prints the: 
+        positive numbers, negative numbers, sum of positive numbers and sum of negative numbers. 
+    -->
+    <head>
+        <h1>Series of Integers</h1>
+        <title>Series of Integers</title>
+        <script>
+            /*
+            This function counts the total sum of the parameter array and returns the value.
+            */
+            function getTotal(array){ //negative or positive array list
+                var total = 0;
+                var total_count;
+                for(total_count=0; total_count<array.length;total_count++){
+                    total += array[total_count];
+                }
+                return total
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var list = new Array (8);
+            var list_count = 0;
+            /*
+            The loop asks the user for the numbers within the array and
+            stores the values within the array list[ ].
+            */
+                while(list_count<=7){ //arbitary number of 8
+                    var num = parseInt(prompt("What is the integer? Enter 0 to exit."));
+                    if(num == 0){
+                        break;
+                    }else{
+                        list[list_count] = num;
+                    list_count++;
+                    }
+                }
+            var negative = [];
+            var positive = [];
+            var count = 0;
+            /*
+            The loop adds the given positive and negative numbers to their dedicated arrays.
+            */
+            while(count < list.length) {
+                if(list[count] > 0) {
+                    positive.push(list[count]);
+                } else if(list[count] < 0) {
+                    negative.push(list[count]);
+                }
+                count++;
+            }
+            //prints the results
+            document.write("You entered the following negative integers: " + negative + "<br/>");
+            document.write("The sum of all negative integers is: " + getTotal(negative) + "<br/>");
+            document.write("You entered the following positive integers: " + positive + "<br/>"); 
+            document.write("The sum of all positive integers is: " + getTotal(positive)); 
+        </script>
+    </body>
+</html>
